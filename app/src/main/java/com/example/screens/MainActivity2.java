@@ -15,31 +15,31 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("==>", "ProfileAcitivty started.");
+        Log.d("==>", "MainActivity2 started.");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("==>", "ProfileAcitivty stopped.");
+        Log.d("==>", "MainActivity2 stopped.");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("==>", "ProfileAcitivty destroyed.");
+        Log.d("==>", "MainActivity2 destroyed.");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("==>", "ProfileAcitivty paused.");
+        Log.d("==>", "MainActivity2 paused.");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("==>", "ProfileAcitivty resumed.");
+        Log.d("==>", "MainActivity2 resumed.");
     }
 
 
@@ -47,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Log.d("==>", "ProfileAcitivty created.");
+        Log.d("==>", "Main Activity 2 created.");
         homepage = findViewById(R.id.home_button);
 
         Intent intent = getIntent();
