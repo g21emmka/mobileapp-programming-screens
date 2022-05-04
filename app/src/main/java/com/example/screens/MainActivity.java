@@ -3,8 +3,13 @@ package com.example.screens;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button profile;
 
 
     @Override
@@ -42,5 +47,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("==>", "MainAcitivty created.");
+
+        profile = findViewById(R.id.profile_button);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("==>", "Sign in button pressed.");
+
+            }
+        });
     }
 }
