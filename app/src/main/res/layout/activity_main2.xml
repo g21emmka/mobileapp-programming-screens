@@ -6,4 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <TextView
+        android:id="@+id/profilepage_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to your profile page"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to home page"
+        app:layout_constraintBottom_toTopOf="@+id/profilepage_label"
+        app:layout_constraintEnd_toStartOf="parent"/>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

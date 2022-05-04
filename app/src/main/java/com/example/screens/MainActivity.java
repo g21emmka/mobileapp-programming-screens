@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("==>", "Sign in button pressed.");
+                Log.d("==>", "Go to profile page button pressed.");
 
             }
         });
