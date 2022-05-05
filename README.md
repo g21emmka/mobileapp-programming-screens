@@ -1,39 +1,53 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+Jag började med att skapa en till aktivitet. Sedan la jag till event i MainActivity och skapade en layout för "homepage", som finns i xml-filen
+activity_main. I layouten la jag till en knapp som går till en annan sida, denna har jag valt att kalla "profile page". 
+Denna "profile page" består av en xml-fil som heter acitivity_main2 som jag skapat och stylat, där jag även lagt in en knapp som går tillbaka till 
+föregående sida, alltså "home page". 
+Jag använde mig av intent för att koppla ihop dessa två sidor. 
 
-_Du kan ta bort all text som finns sedan tidigare_.
 
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
+Java kod från Home page, där man bland annat kan se hur intent använts. 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+   profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("==>", "Go to profile page button pressed.");
+                Log.d("==>", "Username:"+username.getText().toString());
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("username", username.getText().toString());
+                startActivity(intent);
+
+            }
+        });
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
+Java kod från Profile page, där man bland annat kan se hur intent använts.
+```
+ 
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
 
-![](android.png)
+        String username = extras.getString("username");
+        Log.d("==>", "Username from intent" +username);
+
+        homepage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("==>", "Go to home page pressed.");
+                finish();
+            }
+        });
+```
+
+Bild på home page
+
+![](Home_page.png)
+
+Bild på profile page 
+
+![](Profile_page.png)
 
 Läs gärna:
 
